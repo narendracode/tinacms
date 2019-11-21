@@ -13,7 +13,17 @@ module.exports = {
       resolve: "gatsby-plugin-tinacms",
       options: {
         plugins: [
-          "gatsby-tinacms-git", 
+          {
+            resolve:"gatsby-tinacms-git",
+            options: {
+              pathToRepo: "https://github.com/narendrasoni1989/tinacms",
+              pathToContent: 'content/blog',
+              defaultCommitMessage: 'Update from the content ',
+              defaultCommitName: 'narendrasoni1989',
+              defaultCommitEmail: 'narendra.kumar.soni28@gmail.com',
+              pushOnCommit: true,
+            }
+          }, 
           "gatsby-tinacms-remark",
           "gatsby-tinacms-json"
         ],
